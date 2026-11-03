@@ -454,3 +454,19 @@ button { font: inherit; color: inherit; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 32px)); } }
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation-duration: 90s; } }
 @media (max-width: 700px) { .marquee-track { gap: 40px; animation-duration: 24s; } .marquee .logo .txt { font-size: 1.25rem; } }
+
+/* ---------- Where are you stuck ---------- */
+.stuck { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.stuck-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; }
+.stuck-card .tagline { display: inline-block; align-self: flex-start; font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent, #FF4F1F); margin-bottom: 14px; }
+.stuck-card h3 { font-size: 1.3rem; line-height: 1.25; margin-bottom: 14px; }
+.stuck-card p { color: var(--muted); margin: 0 0 22px; flex: 1; }
+.stuck-card p strong { color: var(--ink); font-weight: 600; }
+.stuck-proof { display: flex; align-items: center; gap: 14px; padding-top: 18px; border-top: 1px solid var(--line); text-decoration: none; color: var(--ink); }
+.stuck-proof strong { font-size: 2rem; font-weight: 700; letter-spacing: -.03em; color: var(--accent, #FF4F1F); line-height: 1; }
+.stuck-proof span { font-size: .92rem; font-weight: 500; }
+.stuck-proof:hover span { text-decoration: underline; }
+.why { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 14px; }
+.why li { padding-left: 18px; border-left: 3px solid var(--accent, #FF4F1F); color: var(--muted); font-size: 1.05rem; line-height: 1.55; }
+.why li strong { color: var(--ink); display: block; font-weight: 600; }
+@media (max-width: 900px) { .stuck { grid-template-columns: 1fr; } }
