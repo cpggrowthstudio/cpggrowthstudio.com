@@ -304,3 +304,4 @@ button { font: inherit; color: inherit; }
 @media (max-width: 1000px) { .services--4 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 860px) { .ind-help { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .services--4, .ind-grid { grid-template-columns: 1fr; } }
+.cs-media img.contain { object-fit: contain; background: #fff; border: 1px solid var(--line); }
