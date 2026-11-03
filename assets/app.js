@@ -2,6 +2,12 @@
 (function () {
   document.documentElement.classList.add('js');
 
+  // Always open a new page at the top (unless the link points to a section).
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  var toTop = function () { if (!location.hash) window.scrollTo(0, 0); };
+  toTop();
+  window.addEventListener('load', toTop);
+
   var toggle = document.querySelector('.menu-toggle');
   var nav = document.getElementById('site-nav');
   if (toggle && nav) toggle.addEventListener('click', function () {
