@@ -62,6 +62,6 @@
   if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('is-in'); }); return; }
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.01, rootMargin: '0px 0px -5% 0px' });
   els.forEach(function (e) { io.observe(e); });
 })();

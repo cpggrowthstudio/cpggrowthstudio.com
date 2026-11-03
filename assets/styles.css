@@ -417,3 +417,4 @@ button { font: inherit; color: inherit; }
 @media (max-width:900px){.path,.buyers{grid-template-columns:1fr}.months{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.buyer-needs,.months{grid-template-columns:1fr}}
 @media (max-width:900px) and (min-width:561px){.months .months-next{grid-column:1/-1}}
+.rv-all .rv{opacity:1!important;transform:none!important}
