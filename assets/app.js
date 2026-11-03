@@ -44,6 +44,20 @@
     else img.addEventListener('error', swap);
   });
 
+  // Photos: if one fails to load, show a labelled placeholder instead.
+  document.querySelectorAll('img[data-fallback]').forEach(function (img) {
+    var swap = function () {
+      var d = document.createElement('div');
+      d.className = 'ph';
+      d.textContent = img.getAttribute('data-fallback');
+      img.replaceWith(d);
+      var cap = d.parentNode && d.parentNode.querySelector('figcaption');
+      if (cap) cap.remove();
+    };
+    if (img.complete && img.naturalWidth === 0) swap();
+    else img.addEventListener('error', swap);
+  });
+
   var els = document.querySelectorAll('.rv');
   if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('is-in'); }); return; }
   var io = new IntersectionObserver(function (entries) {
