@@ -18,7 +18,7 @@ It is a plain static site (HTML + one stylesheet, no build step), hosted on GitH
 | /book/ | `book/index.html` |
 | /privacy/ | `privacy/index.html` |
 
-Styles live in `assets/styles.css`.
+Styles live in `assets/styles.css` (colours and fonts are tokens at the top). Small interactions (menu, scroll reveals, number count-ups) are in `assets/app.js`.
 
 ## Placeholders to fill
 
