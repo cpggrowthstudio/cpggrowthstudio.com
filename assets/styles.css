@@ -331,3 +331,11 @@ button { font: inherit; color: inherit; }
 .more-card .thumb { background: #fff; border: 1px solid var(--line); overflow: hidden; }
 .more-card .thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .hero-media .yt.still { aspect-ratio: 1 / 1; border: 0; background: transparent; }
+
+/* Four pricing tiers and four steps */
+.tiers.tiers--4 { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.tiers--4 .tier { padding: 28px 22px; }
+.tiers--4 .tier .price { font-size: 2.1rem; }
+.steps:has(.step:nth-child(4)) { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+@media (max-width: 1000px) { .tiers.tiers--4, .steps:has(.step:nth-child(4)) { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .tiers.tiers--4, .steps:has(.step:nth-child(4)) { grid-template-columns: 1fr; } }
