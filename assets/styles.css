@@ -386,11 +386,13 @@ button { font: inherit; color: inherit; }
 @media (max-width:900px){.packs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;-webkit-overflow-scrolling:touch}.pack{flex:0 0 38%;scroll-snap-align:start}}
 .hero-photo img{border-radius:22px}
 .about .portfolio{align-self:center}
-.hero-media--photo{max-width:380px;justify-self:center;width:100%;padding-bottom:28px}
-.cred-card{position:absolute;left:-28px;bottom:0;background:var(--white,#fff);border-radius:14px;padding:12px 16px;box-shadow:0 10px 30px rgba(15,15,16,.12);max-width:250px}
-.cred-card strong{display:block;font-size:1rem;font-weight:600}
-.cred-card span{display:block;font-size:.8rem;color:var(--muted);line-height:1.35;margin-top:2px}
-@media (max-width:900px){.hero-media--photo{max-width:300px}.cred-card{left:-12px}}
+.hero-media--photo{max-width:420px;justify-self:center;width:100%;align-self:start;margin-top:28px}
+.cred-card{position:relative;margin:-84px 0 0 -36px;width:300px;background:var(--white,#fff);border-radius:16px;padding:18px 22px;box-shadow:0 14px 36px rgba(15,15,16,.14)}
+.cred-card strong{display:block;font-size:1.15rem;font-weight:600}
+.cred-card .cred-sub{display:block;font-size:.85rem;color:var(--muted);margin:2px 0 10px}
+.cred-card ul{list-style:none;margin:0;padding:0}
+.cred-card li{font-size:1rem;font-weight:600;padding:5px 0;border-top:1px solid var(--line)}
+@media (max-width:900px){.hero-media--photo{max-width:340px;margin-top:8px}.cred-card{margin-left:-12px;width:auto;max-width:300px}}
 /* founder-lens: path, buyers, months, cost */
 .path{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .path-step{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column}
