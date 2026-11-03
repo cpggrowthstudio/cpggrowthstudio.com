@@ -314,3 +314,8 @@ button { font: inherit; color: inherit; }
 .cs-gallery .g-row img { margin: 0; }
 @media (max-width: 700px) { .cs-gallery .g-2 { grid-template-columns: 1fr; } }
 .cs-gallery img[src*="aplus-icons"] { max-width: 820px; margin-inline: auto; }
+.cs-gallery .g-3 { grid-template-columns: repeat(3, 1fr); align-items: start; }
+.cs-gallery .g-2 img, .cs-gallery .g-3 img { background: #fff; }
+@media (max-width: 700px) { .cs-gallery .g-3 { grid-template-columns: 1fr 1fr; } }
+.cs-gallery .g-3 + .g-2 { width: calc(66.66% - 7px); margin-inline: auto; }
+@media (max-width: 700px) { .cs-gallery .g-3 + .g-2 { width: 100%; } }
