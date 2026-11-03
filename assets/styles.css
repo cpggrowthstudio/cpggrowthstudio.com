@@ -322,3 +322,12 @@ button { font: inherit; color: inherit; }
 .reel { width: min(100%, 380px); margin-inline: auto; aspect-ratio: 9 / 15; border-radius: var(--radius); overflow: hidden; background: #fff; border: 1px solid var(--line); }
 .reel iframe { width: 100%; height: 100%; border: 0; display: block; }
 .cs-media:has(.reel) figcaption { text-align: center; }
+
+/* Video covers: self-hosted poster so videos never show as a black box */
+.yt:has(.yt-poster) { background: #fff; border: 1px solid var(--line); }
+.yt .yt-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
+.yt.still { cursor: default; }
+.yt.still::after { display: none; }
+.more-card .thumb { background: #fff; border: 1px solid var(--line); overflow: hidden; }
+.more-card .thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.hero-media .yt.still { aspect-ratio: 1 / 1; border: 0; background: transparent; }

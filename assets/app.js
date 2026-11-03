@@ -18,7 +18,7 @@
   // YouTube: show the thumbnail, load the player only when clicked.
   document.querySelectorAll('.yt[data-id]').forEach(function (el) {
     var id = el.getAttribute('data-id');
-    el.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + id + '/hqdefault.jpg)';
+    if (!el.querySelector('.yt-poster')) el.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + id + '/hqdefault.jpg)';
     el.addEventListener('click', function (e) {
       e.preventDefault();
       if (el.classList.contains('playing')) return;
