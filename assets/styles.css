@@ -354,3 +354,15 @@ button { font: inherit; color: inherit; }
 .about-stats strong { display: block; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 600; letter-spacing: -.04em; line-height: 1; color: var(--accent); }
 .about-stats span { display: block; margin-top: 8px; color: var(--muted); font-size: .95rem; }
 @media (max-width: 900px) { .cs-row.cs-row--text { gap: 14px; } }
+
+/* Headshot */
+.headshot { margin: 0; }
+.headshot img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius); }
+.about-stats--row { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 700px) { .about-stats--row { grid-template-columns: 1fr; } }
+.cta-avatar { display: block; width: 72px; height: 72px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 3px solid rgba(255,255,255,.9); }
+.book-host { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 36px; padding: 20px 22px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+.book-host img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
+.book-host > div { flex: 1; min-width: 200px; }
+.book-host strong { display: block; font-weight: 600; }
+.book-host span { display: block; color: var(--muted); font-size: .92rem; margin-top: 2px; }
