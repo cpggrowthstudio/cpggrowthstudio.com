@@ -418,3 +418,26 @@ button { font: inherit; color: inherit; }
 @media (max-width:560px){.buyer-needs,.months{grid-template-columns:1fr}}
 @media (max-width:900px) and (min-width:561px){.months .months-next{grid-column:1/-1}}
 .rv-all .rv{opacity:1!important;transform:none!important}
+
+/* ---------- Insights ---------- */
+.byline { display: flex; align-items: center; gap: 12px; margin-top: 26px; }
+.byline img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.byline strong { display: block; font-weight: 600; }
+.byline strong a { color: inherit; text-decoration: none; }
+.byline span { color: var(--muted); font-size: .9rem; }
+.article { padding-bottom: 64px; }
+.answer { background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--accent, #FF4F1F); border-radius: var(--radius); padding: 24px 28px; margin-bottom: 40px; }
+.answer .num { display: block; font-size: .8rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent, #FF4F1F); margin-bottom: 8px; }
+.answer p { margin: 0; font-size: 1.15rem; line-height: 1.6; }
+.article-body h2 { font-size: clamp(1.4rem, 2.6vw, 1.75rem); margin: 44px 0 14px; }
+.article-body ul { padding-left: 1.2em; margin: 0 0 18px; }
+.article-body li { font-size: 1.05rem; line-height: 1.65; margin-bottom: 6px; }
+.article-body a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.article-body .faq { margin-bottom: 18px; }
+.article .lesson-band { margin-top: 48px; }
+.cmp { width: 100%; border-collapse: collapse; margin: 8px 0 18px; font-size: .98rem; display: block; overflow-x: auto; }
+.cmp th, .cmp td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; min-width: 120px; }
+.cmp th { font-weight: 600; }
+.cmp td:first-child { font-weight: 600; color: var(--muted); }
+.more-grid--2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 700px) { .more-grid--2 { grid-template-columns: 1fr; } }
