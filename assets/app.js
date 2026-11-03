@@ -1,54 +1,53 @@
-// CPG Growth Studio — small interactions: menu, sticky header, reveals, count-ups.
+// CPG Growth Studio: menu, sticky header, reveals, YouTube facades, logo fallbacks.
 (function () {
-  var doc = document.documentElement;
-  doc.classList.add('js');
+  document.documentElement.classList.add('js');
 
   var toggle = document.querySelector('.menu-toggle');
   var nav = document.getElementById('site-nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-      toggle.textContent = open ? 'Close' : 'Menu';
-    });
-  }
+  if (toggle && nav) toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.textContent = open ? 'Close' : 'Menu';
+  });
 
   var header = document.querySelector('.site-header');
   var onScroll = function () { if (header) header.classList.toggle('is-stuck', window.scrollY > 8); };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function countUp(el) {
-    var raw = el.getAttribute('data-count');
-    var m = raw && raw.match(/^([^\d]*)([\d.]+)(.*)$/);
-    if (!m || reduce) return;
-    var pre = m[1], target = parseFloat(m[2]), post = m[3];
-    var dec = (m[2].split('.')[1] || '').length;
-    var t0 = null, dur = 1100;
-    function step(t) {
-      if (!t0) t0 = t;
-      var p = Math.min((t - t0) / dur, 1);
-      var e = 1 - Math.pow(1 - p, 3);
-      el.textContent = pre + (target * e).toFixed(dec) + post;
-      if (p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  var targets = document.querySelectorAll('.rv, .shelf, .hl, [data-count]');
-  if (!('IntersectionObserver' in window)) {
-    targets.forEach(function (el) { el.classList.add('is-in'); });
-    return;
-  }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (!en.isIntersecting) return;
-      en.target.classList.add('is-in');
-      if (en.target.hasAttribute('data-count')) countUp(en.target);
-      io.unobserve(en.target);
+  // YouTube: show the thumbnail, load the player only when clicked.
+  document.querySelectorAll('.yt[data-id]').forEach(function (el) {
+    var id = el.getAttribute('data-id');
+    el.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + id + '/hqdefault.jpg)';
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (el.classList.contains('playing')) return;
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      f.title = el.getAttribute('aria-label') || 'Video';
+      f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      el.appendChild(f);
+      el.classList.add('playing');
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-  targets.forEach(function (el) { io.observe(el); });
+  });
+
+  // Logos: if an image fails to load, show the name as text instead.
+  document.querySelectorAll('.logo img').forEach(function (img) {
+    var swap = function () {
+      var s = document.createElement('span');
+      s.className = 'txt';
+      s.textContent = img.alt;
+      img.replaceWith(s);
+    };
+    if (img.complete && img.naturalWidth === 0) swap();
+    else img.addEventListener('error', swap);
+  });
+
+  var els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('is-in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(function (e) { io.observe(e); });
 })();
