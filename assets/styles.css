@@ -292,7 +292,7 @@ button { font: inherit; color: inherit; }
 
 /* ---------- services (8) + industries ---------- */
 .services--4 { grid-template-columns: repeat(4, 1fr); }
-.ind-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.ind-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
 .ind-card { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; text-decoration: none; transition: transform .2s ease, border-color .2s ease; }
 .sec:not(.sec--white) .ind-card { background: var(--white); }
 .ind-card:hover { transform: translateY(-3px); border-color: var(--ink); }
@@ -301,6 +301,6 @@ button { font: inherit; color: inherit; }
 .ind-help { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(32px, 6vw, 88px); align-items: start; }
 .ind-help li { font-size: 1.1rem; padding: 14px 0 14px 30px; }
 .ind-help li::before { top: 22px; }
-@media (max-width: 1000px) { .services--4, .ind-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 1000px) { .services--4 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 860px) { .ind-help { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .services--4, .ind-grid { grid-template-columns: 1fr; } }
