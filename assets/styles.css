@@ -339,3 +339,18 @@ button { font: inherit; color: inherit; }
 .steps:has(.step:nth-child(4)) { grid-template-columns: repeat(4, 1fr); gap: 24px; }
 @media (max-width: 1000px) { .tiers.tiers--4, .steps:has(.step:nth-child(4)) { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .tiers.tiers--4, .steps:has(.step:nth-child(4)) { grid-template-columns: 1fr; } }
+
+/* Text-only story rows: same two-column rhythm as the image rows */
+.cs-row.cs-row--text { align-items: start; }
+.cs-row--text h3 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); letter-spacing: -.03em; line-height: 1.1; }
+.cs-row--text .cs-text p:first-child { margin-top: 0; }
+.cs-text li a, .watch a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.cs-text li a:hover, .watch a:hover { text-decoration: underline; }
+.watch { margin: 14px 0 0; font-size: .95rem; }
+
+/* About: proof numbers instead of a photo */
+.about-stats { display: grid; gap: 14px; }
+.about-stats > div { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 26px; }
+.about-stats strong { display: block; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 600; letter-spacing: -.04em; line-height: 1; color: var(--accent); }
+.about-stats span { display: block; margin-top: 8px; color: var(--muted); font-size: .95rem; }
+@media (max-width: 900px) { .cs-row.cs-row--text { gap: 14px; } }
