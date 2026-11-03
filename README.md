@@ -29,9 +29,12 @@ Styles live in `assets/styles.css`.
 
 ## Publish with GitHub Pages
 
-1. Repo **Settings → Pages → Build and deployment**: Source "Deploy from a branch", branch `main`, folder `/ (root)`.
-2. Links on these pages start with `/`, so the site is meant to run on its own domain. The default `github.io/cpggrowthstudio.com/` address will show unstyled pages; set the custom domain (step 3) and view it there.
-3. **Custom domain:** in the same Pages settings, enter `www.cpggrowthstudio.com`. At your domain registrar, add:
+1. Merge the pull request into `main`.
+2. Repo **Settings → Pages → Build and deployment**: Source "Deploy from a branch", branch `main`, folder `/ (root)`, then Save.
+3. After a minute or two the site is live at `https://cpggrowthstudio.github.io/cpggrowthstudio.com/`.
+4. **Custom domain (when ready):** in the same Pages settings, enter `www.cpggrowthstudio.com`. At your domain registrar, add:
    - a `CNAME` record for `www` pointing to `cpggrowthstudio.github.io`
    - `A` records for the bare domain pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-4. Once DNS resolves, tick **Enforce HTTPS**.
+5. Once DNS resolves, tick **Enforce HTTPS**.
+
+Links between pages are relative, so the site works both at the github.io address and on the custom domain.
