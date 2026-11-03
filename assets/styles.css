@@ -366,3 +366,6 @@ button { font: inherit; color: inherit; }
 .book-host > div { flex: 1; min-width: 200px; }
 .book-host strong { display: block; font-weight: 600; }
 .book-host span { display: block; color: var(--muted); font-size: .92rem; margin-top: 2px; }
+.portfolio{margin:0 auto;max-width:960px}
+.portfolio img{display:block;width:100%;height:auto;border-radius:16px;background:#000}
+.portfolio figcaption{margin-top:12px;font-size:14px;color:var(--muted,#666);text-align:center}
