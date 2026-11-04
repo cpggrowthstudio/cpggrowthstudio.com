@@ -492,3 +492,4 @@ button { font: inherit; color: inherit; }
 .marquee-track { gap: 56px; align-items: flex-start; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 28px)); } }
 @media (max-width: 700px) { .marquee-track { gap: 36px; } @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 18px)); } } .marquee .logo-img { height: 46px; } .marquee .logo img { transform: scale(.85); } }
+.article-body ol { padding-left: 1.3em; margin: 0 0 18px; } .article-body ol li { font-size: 1.05rem; line-height: 1.65; margin-bottom: 6px; }
