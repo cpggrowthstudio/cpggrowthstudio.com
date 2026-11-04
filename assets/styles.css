@@ -484,3 +484,11 @@ button { font: inherit; color: inherit; }
 @media (max-width: 900px) { .tms--3, .tms--2 { grid-template-columns: 1fr; } }
 .marquee .logo .txt { opacity: 1; }
 .marquee .logo img { filter: none; opacity: 1; }
+/* logo strip with real logos + names */
+.marquee .logo { height: auto; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; flex: none; }
+.marquee .logo-img { height: 56px; display: flex; align-items: center; }
+.marquee .logo img { height: auto; max-width: none; object-fit: contain; filter: none; opacity: 1; }
+.marquee .logo figcaption { font-size: .78rem; font-weight: 500; color: var(--muted); white-space: nowrap; }
+.marquee-track { gap: 56px; align-items: flex-start; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 28px)); } }
+@media (max-width: 700px) { .marquee-track { gap: 36px; } @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 18px)); } } .marquee .logo-img { height: 46px; } .marquee .logo img { transform: scale(.85); } }
