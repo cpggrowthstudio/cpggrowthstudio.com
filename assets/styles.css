@@ -482,3 +482,5 @@ button { font: inherit; color: inherit; }
 .tm figcaption strong { display: block; font-weight: 600; }
 .tm figcaption span { color: var(--muted); font-size: .92rem; }
 @media (max-width: 900px) { .tms--3, .tms--2 { grid-template-columns: 1fr; } }
+.marquee .logo .txt { opacity: 1; }
+.marquee .logo img { filter: none; opacity: 1; }
