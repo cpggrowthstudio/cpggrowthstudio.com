@@ -470,3 +470,15 @@ button { font: inherit; color: inherit; }
 .why li { padding-left: 18px; border-left: 3px solid var(--accent, #FF4F1F); color: var(--muted); font-size: 1.05rem; line-height: 1.55; }
 .why li strong { color: var(--ink); display: block; font-weight: 600; }
 @media (max-width: 900px) { .stuck { grid-template-columns: 1fr; } }
+
+/* ---------- Testimonials ---------- */
+.tms { display: grid; gap: 20px; }
+.tms--3 { grid-template-columns: repeat(3, 1fr); }
+.tms--2 { grid-template-columns: repeat(2, 1fr); }
+.tm { margin: 0; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; }
+.tm-cat { align-self: flex-start; font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: var(--paper); border-radius: 999px; padding: 5px 10px; margin-bottom: 18px; }
+.tm blockquote { margin: 0 0 22px; font-size: 1.02rem; line-height: 1.6; color: var(--ink); flex: 1; }
+.tm figcaption { border-top: 1px solid var(--line); padding-top: 16px; }
+.tm figcaption strong { display: block; font-weight: 600; }
+.tm figcaption span { color: var(--muted); font-size: .92rem; }
+@media (max-width: 900px) { .tms--3, .tms--2 { grid-template-columns: 1fr; } }
